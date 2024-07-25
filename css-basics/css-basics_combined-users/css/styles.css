@@ -82,7 +82,15 @@ li {
   For guidance you can include some debug styles.
   To do so, add a "debug" class to the html element.
 */
+.hide .bio {
+  font-size: 12px;
+  color: white;
+}
 
+.hide .location {
+  text-align: left;
+  color: darkslategray;
+}
 /*
   Part 2
 
