@@ -36,10 +36,13 @@ button {
 }
 
 .button2 {
+  color: whitesmoke;
+  background-color: #606060;
   /*Style me! Change my color, or my background-color. Or both! You can test out different color modes here - like HEX, RGB, ... */
 }
 
 .button3 {
+  font-family: "Times New Roman", Times, serif;
   /*Style me! You can test out changing the font, or font size, ...*/
 }
 
