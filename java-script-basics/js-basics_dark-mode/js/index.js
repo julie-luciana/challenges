@@ -2,13 +2,27 @@ console.clear();
 
 const bodyElement = document.querySelector('[data-js="body"]');
 
-//1. Declaring Variables
+// 1. Declaring Variables
+// query all 3 buttons with the 'data-js' attribute
 
 const darkModeButton = document.querySelector('[data-js="dark-mode-button"]');
 
 const lightModeButton = document.querySelector('[data-js="light-mode-button"]');
 
-const toggleButton = document.querySelector('[data-js="toggle-button-button"]');
+const toggleButton = document.querySelector('[data-js="toggle-button"]');
+
+// add event event listener to each button
+darkModeButton.addEventListener("click", () => {
+  bodyElement.classList.add("dark");
+});
+
+lightModeButton.addEventListener("click", () => {
+  bodyElement.classList.remove("dark");
+});
+
+toggleButton.addEventListener("click", () => {
+  bodyElement.classList.toggle("dark");
+});
 
 /* 
 Add some interactivity to this website. 
