@@ -1,5 +1,3 @@
-console.clear();
-
 const operand1 = 12;
 const operand2 = 4;
 
@@ -15,6 +13,8 @@ const moduloButton = document.querySelector('[data-js="modulo"]');
 
 addButton.addEventListener("click", () => {
   // 1. Add the two operands and store the result in a variable. Log the variable's value to the console.
+  result = operand1 + operand2;
+  console.log(result);
 });
 
 subtractButton.addEventListener("click", () => {
