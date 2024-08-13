@@ -20,3 +20,13 @@ For a circle with a radius of 5 units:
 
 Run your JavaScript program to see the calculated area and circumference of the circle with the specified radius
 */
+
+const radius = 5;
+const circleArea = Math.PI * Math.pow(radius, 2);
+const circumference = 2 * Math.PI * radius;
+
+console.log("For a circle with a radius of " + radius + " units:");
+console.log("- The area is approximately " + circleArea + " square units.");
+console.log(
+  "- The circumference is approximately " + circumference + " units."
+);
