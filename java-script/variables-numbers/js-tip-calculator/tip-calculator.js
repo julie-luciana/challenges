@@ -22,4 +22,4 @@ const tipAmount = mealCost * tip;
 
 const totalCost = mealCost + tipAmount;
 
-console.log("The meal including the tip costs:" + totalCost + "€.");
+console.log("The meal including the tip costs: " + totalCost + " €.");
