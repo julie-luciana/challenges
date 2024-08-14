@@ -1,25 +1,30 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
-
+/* TYPE SELECTORS */
 body {
   font-family: system-ui;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
 }
 
 /* put a selector here to select div elements (see index.html) */
-SELECTOR HERE {
-  font-family: cursive;
-  padding: 8px;
-
-  /* set the height and the width of the box to 150px */
-
+.box {
+   /* set the height and the width of the box to 150px */
+  height: 150px;
+  width: 150px;
   /* make the background color "hotpink" */
-
+  background-color: hotpink;
   /* make the text color "white" */
-
+  color: white;
+  border: solid black 2px;
   /* can you give the box round edges with an radius of 8px? */
+  border-radius: 8px;
+}
+ /* ✨ feel free to experiment! */
+ .font{
+  margin-top: 60px;
+}
 
-  /* ✨ feel free to experiment! */
 }

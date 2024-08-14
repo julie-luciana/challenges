@@ -24,11 +24,31 @@ const display = document.querySelector('[data-js="display"]');
 
 function getGreeting() {
   // Code here
+  let time = new Date().getHours();
+  if (time <= 12 && time >= 6) {
+    return "Good Morning";
+  } else if (time >= 13 && time <= 18) {
+    return "Good Afternoon";
+  } else if (time >= 19 && time <= 22) {
+    return "Good Evening";
+  } else {
+    return "Good Night";
+  }
+  console.log(time);
 }
 
 function getDayColor() {
   // Code here
+  let weekDay = new Date().getDay();
+  if (weekDay == 1) {
+    return "darkgrey";
+  } else if (weekDay >= 2 && weekDay <= 5) {
+    return "lightblue";
+  } else {
+    return "hotpink";
+  }
 }
 
 display.textContent = getGreeting();
 document.body.style.backgroundColor = getDayColor();
+console.log(new Date().getDay());
