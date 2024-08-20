@@ -8,21 +8,27 @@ const body = document.body;
 
 button3.addEventListener("click", async () => {
   icon.textContent = "💤";
-  sleep(3);
+  body.classList.add("dark");
+  await sleep(3);
+  body.classList.remove("dark");
   icon.textContent = "⏰";
 });
 
-button5.addEventListener("click", () => {
+button5.addEventListener("click", async () => {
   icon.textContent = "💤";
+  body.classList.add("dark");
+  await sleep(5);
   icon.textContent = "⏰";
+  body.classList.remove("dark");
 });
 
-function handleSleepFor10Button() {
+button10.addEventListener("click", async () => {
   icon.textContent = "💤";
+  body.classList.add("dark");
+  await sleep(10);
+  body.classList.remove("dark");
   icon.textContent = "⏰";
-}
-
-button10.addEventListener("click", handleSleepFor10Button);
+});
 
 // --^-- code here --^--
 
