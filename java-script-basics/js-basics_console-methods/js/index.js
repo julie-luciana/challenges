@@ -1,24 +1,30 @@
 console.clear();
+function points(games) {
+  // create a variable points
+  let points = 0;
+  // for every result in the list:
+  // check if the first number is bigger than the second number
+  // -> add 3 to points
+  for (let game of games) {
+    console.log(game, game[0], game[1], game[2]);
+    if (game[0] > game[2]) {
+      points += 3;
+    }
+    if (game[0] === game[2]) {
+      points++;
+    }
+    // Bei Niederlage (x < y) passiert nichts, da keine Punkte hinzugefügt werden
+  }
+  // first num is in index 0, second num is in index 2
+  // after the loop -> return points
+  return points;
+}
 
-// The exercise starts here!
+points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]);
 
-// All console methods can be found on mdn for reference: https://developer.mozilla.org/en-US/docs/Web/API/console
-
-// 1. Store the sentence 'Happy coding!' in a variable named 'coding'.
-const coding = "Happy coding!";
-
-// 2. Display the variable 'coding' as a message in the console.
-console.log(coding);
-
-// 3. Store the sentence 'Happy hacking!' in the variable named 'hacking'.
-const hacking = "Happy hacking!";
-// 4. Display the variable 'hacking' as a message in the console.
-console.log(hacking);
-// 5. Which method is used to clear the console? Use it to tidy up the console.
-console.clear();
-
-// 6. Store the text 'This is an error!' in the variable 'error'.
-const error = "This is an error!";
-// 7. Which method is used to display an error message in the console? Use it do display the error message in the console.
-console.error("Error!");
-// Well done!
+// Expected: 30
+/*
+  if x > y: 3 points (win)
+  if x < y: 0 points (loss)
+  if x = y: 1 point (tie)
+  */
