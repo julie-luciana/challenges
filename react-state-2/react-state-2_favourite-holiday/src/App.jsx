@@ -2,19 +2,18 @@ import "./App.css";
 import { useState } from "react";
 
 // create seperate state for holiday and date
-const [holiday, setHoliday] = useState("?");
-const [date, setDate] = useState(0);
+const [holiday, setHoliday] = useState("");
+const [date, setDate] = useState("");
 
 export default function App() {
   function handleSubmit(event) {
     event.preventDefault();
     // access the values of the target fields with event.target
-    const holidayValue = event.target.holiday.value;
-    const dateValue = event.target.date.value;
+    const formElements = event.target.elements;
 
     // sets both states with its corresponding values
-    setHoliday(holidayValue);
-    setDate(dateValue);
+    setHoliday(formElements.date.value);
+    setDate(formElements.date.value);
   }
 
   return (
