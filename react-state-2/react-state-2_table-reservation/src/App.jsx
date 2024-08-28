@@ -4,16 +4,19 @@ import { useState } from "react";
 
 export default function App() {
   const [people, setPeople] = useState(0);
-  function incrementPeople() {
+  function handleIncrementPeople() {
     setPeople(people + 1);
   }
-  function decrementPeople() {
+  function handleDecrementPeople() {
     setPeople(people - 1);
   }
   return (
     <div className="container">
       <h1>Place a Table Reservation</h1>
-      <Counter onAddPerson={incrementPeople} onRemovePerson={decrementPeople} />
+      <Counter
+        onAddPerson={handleIncrementPeople}
+        onRemovePerson={handleDecrementPeople}
+      />
       <p>You are going to reserve a table for {people} people.</p>
     </div>
   );
