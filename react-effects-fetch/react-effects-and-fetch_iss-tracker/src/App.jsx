@@ -29,14 +29,18 @@ export default function App() {
       console.log(error);
     }
   }
-  // Automatically call getISSCoords when the component mounts
+  // Automatically call getISSCoords when the component mounts and set an interval
   useEffect(() => {
-    getISSCoords();
+    getISSCoords(); // Initial call to fetch ISS coordinates
+
+    // Set up an interval to fetch ISS coordinates every 5 seconds
     const intervalId = setInterval(getISSCoords, 5000);
 
-    // Um das Intervall zu stoppen
-    clearInterval(intervalId);
-  }, []);
+    // Cleanup function to clear the interval when the component unmounts
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []); // Empty dependency array ensures this runs only once
 
   return (
     <main>
