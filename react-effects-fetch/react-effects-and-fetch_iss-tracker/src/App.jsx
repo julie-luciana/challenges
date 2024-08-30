@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Controls from "./components/Controls";
 import Map from "./components/Map";
 import "./App.css";
-
-const URL = "https://api.wheretheiss.at/v1/satellites/25544";
 
 export default function App() {
   const [coords, setCoords] = useState({
@@ -11,7 +9,34 @@ export default function App() {
     latitude: 0,
   });
 
-  async function getISSCoords() {}
+  //Task 1
+  async function getISSCoords() {
+    console.log("running function");
+    try {
+      // Fetch from the given url saved in the constant URL
+      const response = await fetch(
+        "https://api.wheretheiss.at/v1/satellites/25544"
+      );
+      const data = await response.json();
+      // Daten anschauen um keys zu bekommen
+      console.log(data);
+      // After fetching successfully update the coords state accordingly.
+      setCoords({
+        longitude: data.longitude,
+        latitude: data.latitude,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  // Automatically call getISSCoords when the component mounts
+  useEffect(() => {
+    getISSCoords();
+    const intervalId = setInterval(getISSCoords, 5000);
+
+    // Um das Intervall zu stoppen
+    clearInterval(intervalId);
+  }, []);
 
   return (
     <main>
