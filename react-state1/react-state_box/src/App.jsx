@@ -5,7 +5,7 @@ export default function App() {
   const [isActive, setIsActive] = useState(false);
 
   function handleClick() {
-    setIsActive(isActive);
+    setIsActive(!isActive);
     // Check that the value changes correctly.
     console.log(isActive);
   }
