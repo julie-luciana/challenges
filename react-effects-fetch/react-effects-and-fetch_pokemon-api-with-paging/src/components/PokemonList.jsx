@@ -1,10 +1,14 @@
+//Import
 import { useEffect, useState } from "react";
 import "./PokemonList.css";
 export default function PokemonList() {
+  // useState
   const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
   const [next, setNext] = useState(null);
   const [previous, setPrevious] = useState(null);
+
+  // useEffekt
 
   useEffect(() => {
     async function loadPokemon(offset) {
@@ -24,6 +28,7 @@ export default function PokemonList() {
     loadPokemon(offset);
   }, [offset]);
 
+  // Event Handler for navigation
   const handleNextPage = () => {
     if (next) {
       setOffset(offset + 20);
@@ -35,7 +40,7 @@ export default function PokemonList() {
       setOffset(offset - 20);
     }
   };
-
+  // rendering UI
   return (
     <main>
       <button
