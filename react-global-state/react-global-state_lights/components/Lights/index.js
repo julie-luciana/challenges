@@ -11,33 +11,24 @@ const StyledLights = styled.ul`
   justify-content: center;
 `;
 
-export default function Lights() {
+export default function Lights({ lights, onToggleIsOn }) {
   return (
     <StyledLights>
-      <li>
-        <Light name="Living Room" />
-      </li>
-      <li>
-        <Light name="Kitchen" />
-      </li>
-      <li>
-        <Light name="Bedroom" />
-      </li>
-      <li>
-        <Light name="Bathroom" />
-      </li>
-      <li>
-        <Light name="Garage" />
-      </li>
-      <li>
-        <Light name="Porch" />
-      </li>
-      <li>
-        <Light name="Garden" />
-      </li>
-      <li>
-        <Light name="Office" />
-      </li>
+      {lights.map((light) => (
+        <li key={light.id}>
+          <Light
+            name={light.name}
+            isOn={light.isOn}
+            onToggleIsOn={() => onToggleIsOn(light.id)}
+          />
+        </li>
+      ))}
     </StyledLights>
   );
 }
+
+/* Change the Lights component to render the lights dynamically
+       based on the array in state (.map). 
+       You'll need to pass the array down through props. 
+       --> in return
+       */
