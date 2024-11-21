@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -10,6 +10,37 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section></section>
+    <form class="form-container">
+      <p>
+        We want to get to know you! Please enter your personal information
+      </p>
+      <section class="section-container">
+        <div class="section-header">Personal Information</div>
+        <label for="first-name">First Name:</label>
+        <input type="text" name="first-name" id="first-name" />
+        <label for="last-name">Last Name:</label>
+        <input type="text" name="last-name" id="last-name" />
+        <label for="date-of-birth">Your Birthday</label>
+        <input type="date" name="date-of-birth" id="date-of-birth" />
+      </section>
+      <p>
+        Can you tell us a little bit more? We want to annoy you with unwanted
+        ads
+      </p>
+      <section class="section-container">
+        <div class="section-header">Further Information</div>
+        <label for="favorite-color">Favorite Color:</label>
+        <input type="color" name="favorite-color" id="favorite-color" />
+        <label for="favorite-pet">What's your favorite pet?</label>
+        <select name="favorite-pet" id="favorite-pet">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="bird">Bird</option>
+          <option value="fish">Fish</option>
+        </select>
+      </section>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
